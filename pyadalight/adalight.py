@@ -21,8 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from threading import Thread, get_ident, local
-from time import sleep
+from threading import Thread, get_ident
 
 import cv2
 import numpy as np
@@ -70,8 +69,7 @@ class Adalight(metaclass=Singleton):
         self._ser = None
         self._brightness = 1
         self._running = False
-        self._thread_running = False
-        self._thread: Thread = None
+        self._thread = None
 
     @property
     def led_count(self) -> int:

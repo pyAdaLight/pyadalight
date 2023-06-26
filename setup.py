@@ -5,7 +5,7 @@ requirements = open(join(dirname(__file__), 'requirements.txt')).read().split("\
 
 setup(
     name='pyadalight',
-    version='1.0.0b0',
+    version='1.0.0b1',
     packages=["pyadalight"],
     long_description=open(join(dirname(__file__), 'README.md')).read(),
     long_description_content_type="text/markdown",
@@ -25,5 +25,11 @@ setup(
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'pyadalight=pyadalight.main:main',
+            'pyada=pyadalight.main:main',
+        ]
+    },
 )
